@@ -1,11 +1,4 @@
 # Essential-of-Artificial-Intelligence
-```markdown
-# Artificial Intelligence Lab Reports
-
-This repository contains Python lab work completed as part of the **Artificial Intelligence Lab** course at HITEC University, Taxila.  
-Each lab demonstrates fundamental Python programming concepts with clear solutions and outputs.
-
----
 
 ## Lab 01 - Python Basics
 
@@ -23,7 +16,6 @@ Enter a number: 8
 ...
 8 x 10 = 80
 ```
-
 ---
 
 ### Question 2: Prime Number Check
@@ -195,10 +187,274 @@ Enter a number: 43
 Four Three
 ```
 
+
+# Lab 03 -Python-Functions
+
+````
+
+### Question 1: Factorial of a Number
+ 
+def factorial(n):
+    if n < 0:
+        return "Factorial not defined"
+    fact = 1
+    for i in range(1, n + 1):
+        fact *= i
+    return fact
+
+num = int(input("Enter a number: "))
+print("Factorial:", factorial(num))
+````
+
+**Sample Output**
+
+```
+Enter a number: 5
+Factorial: 120
+```
+
+---
+
+### Question 2: Unique Elements from List
+
+```python
+def unique_list(lst):
+    unique = []
+    for item in lst:
+        if item not in unique:
+            unique.append(item)
+    return unique
+
+sample_list = [1,2,3,3,4,4,5,3,7,5]
+print("Unique List:", unique_list(sample_list))
+```
+
+**Sample Output**
+
+```
+Unique List: [1, 2, 3, 4, 5, 7]
+```
+
+---
+
+### Question 3: First n Even Numbers with Sum and Product
+
+```python
+def even_numbers(n):
+    evens = []
+    for i in range(1, n + 1):
+        evens.append(i * 2)
+    return evens
+
+def sum_product(numbers):
+    s = sum(numbers)
+    p = 1
+    for i in numbers:
+        p *= i
+    return s, p
+
+n = int(input("Enter value of n: "))
+evens = even_numbers(n)
+print("Even Numbers:", evens)
+
+s, p = sum_product(evens)
+print("Sum:", s)
+print("Product:", p)
+```
+
+**Sample Output**
+
+```
+Enter value of n: 5
+Even Numbers: [2, 4, 6, 8, 10]
+Sum: 30
+Product: 3840
+```
+
+---
+
+### Question 4: Match Two Strings
+
+```python
+def match_strings(str1, str2):
+    if str1 == str2:
+        return "Strings are matched"
+    else:
+        return "Strings are not matched"
+
+s1 = input("Enter first string: ")
+s2 = input("Enter second string: ")
+
+print(match_strings(s1, s2))
+```
+
+**Sample Output**
+
+```
+Enter first string: hello
+Enter second string: hello
+Strings are matched
+```
+
+---
+
+### Question 5: User Login System
+
+```python
+def login():
+    username = "admin"
+    password = "1234"
+
+    user = input("Enter username: ")
+    pwd = input("Enter password: ")
+
+    if user == username and pwd == password:
+        print("Login Successful")
+    else:
+        print("Invalid username or password")
+
+login()
+```
+
+**Sample Output**
+
+```
+Enter username: admin
+Enter password: 1234
+Login Successful
+```
+
+---
+
+## Lab 04 - Object Oriented Programming in Python
+### Question 1: Circle Class (Area and Perimeter)
+
+```python
+class Circle:
+    def __init__(self, radius):
+        self.radius = radius
+
+    def area(self):
+        return 3.1416 * self.radius * self.radius
+
+    def perimeter(self):
+        return 2 * 3.1416 * self.radius
+
+c = Circle(5)
+
+print("Area:", c.area())
+print("Perimeter:", c.perimeter())
+```
+
+**Sample Output**
+
+```
+Area: 78.54
+Perimeter: 31.416
+```
+
+---
+
+### Question 2: Implement pow(x,n) Without Built-in Function
+
+```python
+class Power:
+    def power(self, x, n):
+        result = 1
+        if n >= 0:
+            for i in range(n):
+                result *= x
+        else:
+            for i in range(-n):
+                result *= x
+            result = 1 / result
+        return result
+
+p = Power()
+
+print(p.power(2,3))
+print(p.power(2,-2))
+```
+
+**Sample Output**
+
+```
+8
+0.25
+```
+
+---
+
+### Question 3: Star Pattern
+
+```python
+def pattern(n):
+    for i in range(1, n+1):
+        print("*" * i)
+
+pattern(5)
+```
+
+**Sample Output**
+
+```
+*
+**
+***
+****
+*****
+```
+
+---
+
+### Task: Employee Management System (Inheritance)
+
+```python
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+
+class Job:
+    def __init__(self, designation, salary):
+        self.designation = designation
+        self.salary = salary
+
+
+class Employee(Person, Job):
+    def __init__(self, name, age, designation, salary):
+        Person.__init__(self, name, age)
+        Job.__init__(self, designation, salary)
+
+    def display(self):
+        print("Name:", self.name)
+        print("Age:", self.age)
+        print("Designation:", self.designation)
+        print("Salary:", self.salary)
+
+
+emp = Employee("Shaheer Ahmad", 22, "Cyber Security Intern", 50000)
+emp.display()
+```
+
+**Sample Output**
+
+```
+Name: Shaheer Ahmad
+Age: 22
+Designation: Cyber Security Intern
+Salary: 50000
+```
+
 ---
 
 ## 👨‍💻 Author
-- **Shaheer Ahmad**  
-- Roll No: 23-CYS-009  
-- Department of Cyber Security, HITEC University, Taxila
+
+* **Shaheer Ahmad**
+* Roll No: 23-CYS-009
+* Department of Cyber Security
+* HITEC University, Taxila
+
+
 
